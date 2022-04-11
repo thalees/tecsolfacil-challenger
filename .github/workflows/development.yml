@@ -64,6 +64,3 @@ jobs:
 
     - name: Check Format
       run: mix format --check-formatted
-
-    - name: Check Dialyzer
-      run: mix dialyzer 

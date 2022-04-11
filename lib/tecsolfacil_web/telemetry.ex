@@ -1,4 +1,8 @@
 defmodule TecsolfacilWeb.Telemetry do
+  @moduledoc """
+  This is the Telemetry module.
+  """
+
   use Supervisor
   import Telemetry.Metrics
 
