@@ -7,6 +7,8 @@ defmodule TecsolfacilWeb.Router do
 
   scope "/api", TecsolfacilWeb do
     pipe_through :api
+
+    resources "/users", UserController, only: [:create, :show]
   end
 
   # Enables LiveDashboard only for development
