@@ -1,4 +1,4 @@
-defmodule Project.Infrastructure.AddressClient do
+defmodule Tecsolfacil.Infrastructure.AddressClient do
   @moduledoc """
   Responsible for searching for address information.
   """
