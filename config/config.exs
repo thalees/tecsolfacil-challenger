@@ -43,5 +43,5 @@ config :phoenix, :json_library, Jason
 import_config "#{config_env()}.exs"
 
 config :tecsolfacil, Tecsolfacil.Guardian,
-       issuer: "tecsolfacil",
-       secret_key: "i7V08yillqh+9V165FKxAS1r4r+uvGN5zUNYeQ8N9UxyxIZDYGucF7ho5Ikk5pdz"
+  issuer: "tecsolfacil",
+  secret_key: "i7V08yillqh+9V165FKxAS1r4r+uvGN5zUNYeQ8N9UxyxIZDYGucF7ho5Ikk5pdz"
