@@ -45,3 +45,6 @@ import_config "#{config_env()}.exs"
 config :tecsolfacil, Tecsolfacil.Guardian,
   issuer: "tecsolfacil",
   secret_key: "i7V08yillqh+9V165FKxAS1r4r+uvGN5zUNYeQ8N9UxyxIZDYGucF7ho5Ikk5pdz"
+
+# Setup Hackney with default adapter for Tesla HTTP Client
+config :tesla, adapter: Tesla.Adapter.Hackney
