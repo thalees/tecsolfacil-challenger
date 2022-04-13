@@ -1,4 +1,5 @@
 defmodule Tecsolfacil.Guardian do
+  @moduledoc false
   use Guardian, otp_app: :tecsolfacil
 
   def subject_for_token(user, _claims) do
@@ -13,7 +14,7 @@ defmodule Tecsolfacil.Guardian do
   def resource_from_claims(claims) do
     id = claims["sub"]
     resource = Tecsolfacil.Accounts.get_user!(id)
-    {:ok,  resource}
+    {:ok, resource}
   end
 
   def resource_from_claims(_claims) do

@@ -11,7 +11,7 @@ defmodule TecsolfacilWeb.FallbackController do
     |> put_status(:unauthorized)
     |> json(%{error: "Login error"})
   end
-  
+
   # This clause handles errors returned by Ecto's insert/update/delete.
   def call(conn, {:error, %Ecto.Changeset{} = changeset}) do
     conn

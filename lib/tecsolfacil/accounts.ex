@@ -9,7 +9,6 @@ defmodule Tecsolfacil.Accounts do
   alias Tecsolfacil.Accounts.User
   alias Tecsolfacil.Guardian
 
-
   @doc """
   Returns the list of users.
 
@@ -108,6 +107,7 @@ defmodule Tecsolfacil.Accounts do
     case email_password_auth(email, password) do
       {:ok, user} ->
         Guardian.encode_and_sign(user)
+
       _ ->
         {:error, :unauthorized}
     end
@@ -115,7 +115,7 @@ defmodule Tecsolfacil.Accounts do
 
   defp email_password_auth(email, password) when is_binary(email) and is_binary(password) do
     with {:ok, user} <- get_by_email(email),
-    do: verify_password(password, user)
+         do: verify_password(password, user)
   end
 
   defp get_by_email(email) when is_binary(email) do
@@ -123,6 +123,7 @@ defmodule Tecsolfacil.Accounts do
       nil ->
         Comeonin.Bcrypt.dummy_checkpw()
         {:error, "Login error."}
+
       user ->
         {:ok, user}
     end
