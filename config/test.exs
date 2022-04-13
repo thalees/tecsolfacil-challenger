@@ -28,3 +28,6 @@ config :logger, level: :warn
 
 # Initialize plugs at runtime for faster test compilation
 config :phoenix, :plug_init_mode, :runtime
+
+# Use mock adapter for Address client
+config :tesla, Project.Infrastructure.AddressClient, adapter: Tesla.Mock
