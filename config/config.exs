@@ -41,3 +41,7 @@ config :phoenix, :json_library, Jason
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{config_env()}.exs"
+
+config :tecsolfacil, Tecsolfacil.Guardian,
+  issuer: "tecsolfacil",
+  secret_key: "i7V08yillqh+9V165FKxAS1r4r+uvGN5zUNYeQ8N9UxyxIZDYGucF7ho5Ikk5pdz"
