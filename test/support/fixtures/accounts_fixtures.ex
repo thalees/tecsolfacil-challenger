@@ -7,7 +7,7 @@ defmodule Tecsolfacil.AccountsFixtures do
   @doc """
   Generate a unique user email.
   """
-  def unique_user_email, do: "some email#{System.unique_integer([:positive])}"
+  def unique_user_email, do: "some email#{System.unique_integer([:positive])}@foo.com"
 
   @doc """
   Generate a user.
@@ -17,7 +17,9 @@ defmodule Tecsolfacil.AccountsFixtures do
       attrs
       |> Enum.into(%{
         email: unique_user_email(),
-        password_hash: "some password_hash"
+        password_hash: "some password_hash",
+        password: "somepassword",
+        password_confirmation: "somepassword"
       })
       |> Tecsolfacil.Accounts.create_user()
 
