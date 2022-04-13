@@ -30,4 +30,7 @@ config :logger, level: :warn
 config :phoenix, :plug_init_mode, :runtime
 
 # Use mock adapter for Address client
-config :tesla, Project.Infrastructure.AddressClient, adapter: Tesla.Mock
+config :tesla, Tecsolfacil.Infrastructure.AddressClient, adapter: Tesla.Mock
+
+# Setup Oban
+config :tecsolfacil, Oban, queues: false, plugins: false
