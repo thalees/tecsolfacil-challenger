@@ -18,6 +18,13 @@ defmodule TecsolfacilWeb.Router do
     post "/sign_in", UserController, :sign_in
   end
 
+  scope "/api", TecsolfacilWeb do
+    pipe_through [:api]
+
+    get "/addresses/csv", AddressController, :download
+    get "/addresses/:cep", AddressController, :show
+  end
+
   # Enables LiveDashboard only for development
   #
   # If you want to use the LiveDashboard in production, you should put
