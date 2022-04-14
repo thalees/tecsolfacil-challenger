@@ -48,3 +48,9 @@ config :tecsolfacil, Tecsolfacil.Guardian,
 
 # Setup Hackney with default adapter for Tesla HTTP Client
 config :tesla, adapter: Tesla.Adapter.Hackney
+
+# Setup Oban
+config :tecsolfacil, Oban,
+  repo: Tecsolfacil.Repo,
+  plugins: [Oban.Plugins.Pruner],
+  queues: [default: 10, events: 50, media: 20]

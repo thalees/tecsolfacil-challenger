@@ -1,7 +1,7 @@
-defmodule Project.Infrastructure.AddressClientTest do
+defmodule Tecsolfacil.Infrastructure.AddressClientTest do
   use ExUnit.Case
 
-  alias Project.Infrastructure.AddressClient
+  alias Tecsolfacil.Infrastructure.AddressClient
 
   import Tesla.Mock
 
