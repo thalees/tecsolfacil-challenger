@@ -1,5 +1,19 @@
 version: '3'
 services:
+  phoenix:
+      build: .
+      environment:
+         PGUSER: postgres
+         PGPASSWORD: postgres
+         PGDATABASE: tecsolfacil_dev
+         PGPORT: 5432
+         PGHOST: database
+      ports:
+         - '4000:4000'
+      depends_on:
+         - db
+      links:
+      - "db:database"
   db:
     image: postgres
     restart: always
