@@ -41,7 +41,7 @@ jobs:
         mix deps.get
    
     - name: Compile
-      run: mix compile --warnings-as-errors
+      run: mix compile
   static_code_analysis:
     name: Static Code Analysis
     needs: build
@@ -120,6 +120,8 @@ jobs:
           key: ${{ runner.os }}-${{ matrix.otp }}-${{ matrix.elixir }}-${{ hashFiles('mix.lock') }}
 
       - name: Check seeds consistency
+        env:
+          PGHOST: localhost
         run: | 
           mix ecto.create
           mix ecto.migrate
